@@ -36,10 +36,10 @@ def app():
     def generateSwarm():
 
         # Create the swarm, using GBEST PSO, with 50 particles, a 2D plain, and the above parameters
-        swarm = ps.single.GlobalBestPSO(n_particles=50, dimensions=2, options=parameters)
+        swarm = ps.single.GlobalBestPSO(n_particles=15, dimensions=2, options=parameters)
 
         # Optimise the swarm for the given amount of iterations on a spherical plain
-        cost, pos = swarm.optimize(fx.sphere, iters=500)
+        cost, pos = swarm.optimize(fx.sphere, iters=150)
 
         # creates a simple line graph using the iterations and the costs respectively for x,y
         plot_cost_history(cost_history=swarm.cost_history)

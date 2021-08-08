@@ -52,9 +52,6 @@ def app():
         # optimise the swarm for the given amount of iterations on a spherical plain
         cost, pos = optimising.optimize(fx.sphere, iters=150)
 
-        # creates a simple line graph using the iterations and the costs respectively for x,y
-        plot_cost_history(cost_history=optimising.cost_history)
-
         # create mesher within the shape of a sphere
         # plots results of the algorithm
         m = Mesher(func=fx.sphere)
@@ -68,12 +65,11 @@ def app():
         # Saves the animation to a usable gif file
         animation.save('PSOanimparam.gif', writer='imagemagick', fps=11)
 
-        """### gif from url"""
-        # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+
         st.info("Swarm one:")
 
         """### gif from local file"""
-        file = open("PSOanimBounds.gif", "rb")
+        file = open("PSOanimparam.gif", "rb")
         readfile = file.read()
         data = base64.b64encode(readfile).decode("utf-8")
         file.close()
@@ -88,13 +84,7 @@ def app():
         # optimise the swarm for the given amount of iterations on a spherical plain
         cost, pos = optimising2.optimize(fx.sphere, iters=150)
 
-        # creates a simple line graph using the iterations and the costs respectively for x,y
-        plot_cost_history(cost_history=optimising2.cost_history)
-
-        # display the graph
-        plt.show()
-        plt.savefig('PSOcost2.png')
-
+     
         # create mesher within the shape of a sphere
         # used for plotting working results of objective functions
         m2 = Mesher(func=fx.sphere)
@@ -108,9 +98,9 @@ def app():
         # Saves the animation to a usable gif file
         animation2.save('PSOanimparam2.gif', writer='imagemagick', fps=11)
 
-        """### gif from url"""
-        # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+
         st.info("Swarm two:")
+        
         """### gif from local file"""
         file2 = open("PSOanimparam2.gif", "rb")
         contents2 = file2.read()

@@ -2,5 +2,5 @@
 
 # BSc Computer Science - Final Year Project
 
-A learning tool for learning about Particle Swarm Optimisation.
+A learning tool for Particle Swarm Optimisation.
 

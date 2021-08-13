@@ -1,10 +1,12 @@
 """Frameworks for running multiple Streamlit applications as a single app.
    This multi-page app is using the [streamlit-multiapps](https://github.com/upraneelnihar/streamlit-multiapps)
    framework developed by [Praneel Nihar](https://medium.com/@u.praneel.nihar).
-
 """
-import streamlit as st
 
+# import streamlit module
+import streamlit as st
+global currentApp
+# define MultiApp class, used to initialise, run and hold the array of apps
 class MultiApp:
     # initialise the array of pages
     def __init__(self):
@@ -29,6 +31,5 @@ class MultiApp:
             'Navigation',
             self.apps,
             format_func=lambda app: app['title'])
-        # calls the relevant app's app function, which displays the content within it
+        # calls the selected app
         app['function']()
-

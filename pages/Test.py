@@ -1,6 +1,6 @@
 import streamlit as st
 
-
+# create the page as an accessible app function, so that the page can be accessed from the navigation bar
 def app():
 
     st.title('Tests')
@@ -16,7 +16,7 @@ def app():
         # Add a question select box
         q1 = st.selectbox(
             'Answer choices',
-            ('Pbest', 'Gbest', 'Inertia(w)', 'All of the above')
+            ('PBEST', 'GBEST', 'Inertia(w)', 'All of the above')
         )
         submit = st.form_submit_button("Submit")
 

@@ -17,14 +17,14 @@ def app():
                  "The Particles then begin oscillating around the search space according to the velocity "
                  "calculations that are applied with each new Iteration.")
 
-        st.image("searchspace.png")
+        st.image("images/searchspace.png")
 
         st.subheader("A programmed example")
 
         st.write("To give you more understanding of how PSO is initialised, here is a real code example "
                  "of a PSO algorithm's code and the relevant parameters that are passed into it.")
 
-        st.image("swarmcode.PNG")
+        st.image("images/swarmcode.PNG")
 
         st.write("This Python code starts with the values of the c1, c2 and inertia confidence parameters being set to "
                  "the 'parameters' variable. ")
@@ -70,7 +70,7 @@ def app():
                  "and local topology system is discussed and explained in detail further in the 'Types of PSO' section. "
                  "A problem is effectively solved if the given problem reaches a optima that matches "
                  "the value of the original function.")
-        st.image("optimising.png")
+        st.image("images/optimising.png")
 
     def convergence():
         st.subheader("Convergence")
@@ -81,7 +81,7 @@ def app():
         # create a column widget, formatting a section of the page into 2 columns
         column1, column2 = st.beta_columns(2)
         column1.header("Converging Particle Swarm")
-        column1.image(f'convergence.gif')
+        column1.image(f'images/convergence.gif')
         # code for text positioning
         column2.write("  \n")
         column2.write("  \n")

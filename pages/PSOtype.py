@@ -1,14 +1,17 @@
+# import Streamlit
 import streamlit as st
+# import numpy for use with bounds
 import numpy as np
+
+# import PSO related modules
 import base64
-
 import matplotlib.pyplot as plt
-
 import pyswarms as ps
 from pyswarms.utils.functions import single_obj as fx
 from pyswarms.utils.plotters import (plot_cost_history, plot_contour, plot_surface)
 from pyswarms.utils.plotters.formatters import Mesher
 
+# create the page as an accessible app function, so that the page can be accessed from the navigation bar
 def app():
     st.title('Types of Particle Swarm Optimisation algorithms')
 
@@ -54,13 +57,6 @@ def app():
         # optimise the swarm for the given amount of iterations on a spherical plain
         cost, pos = optimising.optimize(fx.sphere, iters=165)
 
-        # creates a simple line graph using the iterations and the costs respectively for x,y
-        plot_cost_history(cost_history=optimising.cost_history)
-
-        # display the graph
-        # plt.show()
-        plt.savefig('PSOcost.png')
-
         # create mesher within the shape of a sphere
         # used for plotting working results of objective functions
         m = Mesher(func=fx.sphere)
@@ -68,14 +64,13 @@ def app():
         # create animation of the swarm
         # plot positions on a 2D sphere plain, with a minima of 0,0
         animation = plot_contour(pos_history=optimising.pos_history,
-                             mesher=m,  # surface plot provided
-                             mark=(0, 0))  # minima marked
+                                 mesher=m,  # surface plot provided
+                                 mark=(0, 0), # minima marked
+                                 title="Particle Swarm Animation")
 
         # Saves the animation to a usable gif file
         animation.save('PSOanim.gif', writer='imagemagick', fps=11)
 
-        """### gif from url"""
-        # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
         st.info("Swarm one:")
 
         """### gif from local file"""
@@ -112,12 +107,6 @@ def app():
         # optimise the swarm for the given amount of iterations on a spherical plain
         cost, pos = optimising.optimize(fx.sphere, iters=150)
 
-        # creates a simple line graph using the iterations and the costs respectively for x,y
-        plot_cost_history(cost_history=optimising.cost_history)
-
-        # display the graph
-        # plt.show()
-        plt.savefig('PSOcost.png')
 
         # create mesher within the shape of a sphere
         # used for plotting working results of objective functions
@@ -127,13 +116,13 @@ def app():
         # plot positions on a 2D sphere plain, with a minima of 0,0
         animation = plot_contour(pos_history=optimising.pos_history,
                                  mesher=m,  # surface plot provided
-                                 mark=(0, 0))  # minima marked
+                                 mark=(0, 0), # minima marked
+                                 title="Particle Swarm Animation")
 
         # Saves the animation to a usable gif file
         animation.save('PSOanimBounds.gif', writer='imagemagick', fps=10)
 
-        """### gif from url"""
-        # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+
         st.info("Swarm one: With bounds")
 
         """### gif from local file"""
@@ -156,13 +145,6 @@ def app():
         # optimise the swarm for the given amount of iterations on a spherical plain
         cost, pos = optimising.optimize(fx.sphere, iters=150)
 
-        # creates a simple line graph using the iterations and the costs respectively for x,y
-        plot_cost_history(cost_history=optimising.cost_history)
-
-        # display the graph
-        # plt.show()
-        plt.savefig('PSOcost.png')
-
         # create mesher within the shape of a sphere
         # used for plotting working results of objective functions
         m = Mesher(func=fx.sphere)
@@ -171,13 +153,12 @@ def app():
         # plot positions on a 2D sphere plain, with a minima of 0,0
         animation = plot_contour(pos_history=optimising.pos_history,
                                  mesher=m,  # surface plot provided
-                                 mark=(0, 0))  # minima marked
-
+                                 mark=(0, 0),  # minima marked
+                                 title="Particle Swarm Animation")
         # Saves the animation to a usable gif file
         animation.save('PSOanimNoBounds.gif', writer='imagemagick', fps=10)
 
-        """### gif from url"""
-        # st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+
         st.info("Swarm two: Without bounds")
 
         """### gif from local file"""

@@ -24,7 +24,7 @@ def app():
         st.write("To give you more understanding of how PSO is initialised, here is a real code example "
                  "of a PSO algorithm's code and the relevant parameters that are passed into it.")
 
-        st.image("swarmcode.png")
+        st.image("swarmcode.PNG")
 
         st.write("This Python code starts with the values of the c1, c2 and inertia confidence parameters being set to "
                  "the 'parameters' variable. ")

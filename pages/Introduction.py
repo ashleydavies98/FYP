@@ -32,7 +32,7 @@ def app():
     # create an expanding widget with relevant label
     expander = st.beta_expander(label='PSO and birdflocks')
     # add image and text to expander
-    expander.image('flocking.png')
+    expander.image('images/flocking.png')
     expander.write("Particles on the right are grouped and oscillate around in a similar fashion to the bird "
                    "flock on the left. Some PSO variants like the Global Best variant we are discussing use "
                    "the best position found so far for judging movement. This means the Particles follow the "

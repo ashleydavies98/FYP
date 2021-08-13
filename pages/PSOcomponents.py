@@ -16,7 +16,7 @@ def app():
     # function for the 'components' teaching block
     def components():
         st.subheader("Particle Components")
-        st.image("variables.png")
+        st.image("components.png")
         st.write("As you can see above, 3 main components influence Velocity for Position/Velocity update PSO, "
                  "Next, we discuss exactly HOW those 3 components are used to cause a change in Velocity "
                  "and therefore a change in particle position between Iterations.")

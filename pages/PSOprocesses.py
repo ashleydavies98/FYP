@@ -120,7 +120,7 @@ def app():
                  "value is changed.")
 
         expander1 = st.beta_expander(label='The effect of low inertia - w = 0.5')
-        expander1.image(f'PSOW5.gif')
+        expander1.image(f'images/PSOW5.gif')
         expander1.write("Particles have low inertia and therefore are not explorative, but entirely "
                         "exploitative. This makes them converge to the Global minima very fast.")
         expander1.info("Minima/Optima: Point of optimal criteria. If a function is optimal when maximised, "
@@ -132,12 +132,12 @@ def app():
                        "before becoming trapped at the global minima, as they do in the above animation.")
 
         expander2 = st.beta_expander(label='The effect of medium inertia - w = 0.7')
-        expander2.image(f'PSOW7.gif')
+        expander2.image(f'images/PSOW7.gif')
         expander2.write("Particles have a slight ability to explore due to the higher inertia, but still "
                         "converge quickly to the Global Minima without much exploration.")
 
         expander3 = st.beta_expander(label='The effect of high inertia - w = 0.9')
-        expander3.image(f'PSOW9.gif')
+        expander3.image(f'images/PSOW9.gif')
         expander3.write("Particles have an inertia value of 0.9, which means that they carry "
                         "a lot of momentum when attempting to move to the next optimal location. "
                         "Due to this momentum, they are far more explorative and as you can see "

@@ -1,13 +1,23 @@
+# import Streamlit
 import streamlit as st
 
 
-
+# create the page as an accessible app function, so that the page can be accessed from the navigation bar
 def app():
     st.title('Applications of PSO')
 
-    st.write("Particle Swarm Optimisation is all about improving a problem solution to be a higher quality. "
-             "In practical uses, this commonly involves minimising costs, times, and other consumptions. "
-             "This means that a lot of the applications of PSO are where these factors are prevalent.")
+    st.write("Particle Swarm Optimisation improves or solves a problem solution. "
+             "In practical uses, this commonly involves minimising costs, times, and other consumptions, "
+             "which means that a lot of the applications of PSO are where these factors are prevalent.")
+
+    st.write("Within the 'Processes of PSO' section, we discussed how Confidence Parameters can cause Particles "
+             "to become too 'exploitative' or 'explorative'. In real world usage, algorithms can be adapted "
+             "using these Parameters to balance these issues and provide benefits to optimisation.")
+
+    st.write("Such examples use what is widely referred to as ‘Modified PSO’ algorithms, which adapt Parameters "
+             "to control exactly how exploitative and explorative the particles are. This allows "
+             "for more precise applications of PSO, and search space areas to be explored as much as "
+             "required for the given objective function.")
 
     # Add a selectbox to the sidebar:
     add_selectbox = st.selectbox(

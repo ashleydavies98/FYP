@@ -64,7 +64,7 @@ def app():
                    "to discover mutliple fit solutions for a given problem by optimising to find "
                    "multiple local minima. This will be expanded on later in the tool when applications of PSO are "
                    "discussed.")
-    expander.image("ringtop.png")
+    expander.image("images/ringtop.png")
 
     # SHOW EXAMPLE OF RING HERE, MAYBE INCLUDE CONVERGENCE EXAMPLE TOO, OF LOCAL OPTIMUMS?
     expander2 = st.beta_expander(label='Global Best Topology')
@@ -73,43 +73,10 @@ def app():
                     "little exploration around the search space as all Particles are attempting to follow one "
                     "Particle's PBEST position at any time. This can result in the entire swarm converging prematurely "
                     "to Local minima.")
-    expander2.image("startop.png")
+    expander2.image("images/startop.png")
 
     # generates two global best Particle swarm with bounds and without bounds and displays them on screen
     def generateSwarms():
-        """
-        # Create bounds
-        max_bound = 5.12 * np.ones(2)
-        min_bound = - max_bound
-        bounds = (min_bound, max_bound)
-
-        parameters ={"c1" : 0.5, "c2" : 0.8, "w" : 0.9}
-
-        optimising = ps.single.GlobalBestPSO(n_particles=25, dimensions=2, options=parameters, bounds=bounds)
-        # optimise the swarm for the given amount of iterations on a spherical plain
-        cost, pos = optimising.optimize(fx.sphere, iters=150)
-
-
-        # create mesher within the shape of a sphere
-        # used for plotting working results of objective functions
-        m = Mesher(func=fx.sphere)
-
-        # create animation of the swarm
-        # plot positions on a 2D sphere plain, with a minima of 0,0
-        animation = plot_contour(pos_history=optimising.pos_history,
-                                 mesher=m,  # surface plot provided
-                                 mark=(0, 0), # minima marked
-                                 title="Particle Swarm Animation")
-
-        # Saves the animation to a usable gif file
-        animation.save('PSOanimBounds.gif', writer='imagemagick', fps=10)
-
-
-        st.info("Swarm one: With bounds")
-        st.image(f'PSOanimBounds.gif')
-
-        """
-
         # display message while swarms are generating
         with st.spinner('Generating both Particle Swarms'):
             # progress bar displayed
@@ -210,12 +177,12 @@ def app():
 
 
 
-    parameters = {'c1': 0.5, 'c2': 0.3, 'w': 0.9, 'k': 1, 'p': 2}
+   
     st.title("How does topology effect the Particle Swarms?")
     st.write("Above, we've discussed what Global and Local topology can do to a swarm, but what does this look "
              "like when visualised? Use the 'generate' button below to find out!")
     st.subheader("Local and Global Best swarms")
-
+    # if check box is ticked, the execute
     if st.checkbox("Generate Local and Global Best swarm"):
         generateSwarms()
 

@@ -76,7 +76,7 @@ def app():
             progressbar.progress(65)
 
             # Saves the animation to a usable gif file
-            animation.save('images/PSOanim.gif', writer='imagemagick', fps=12)
+            animation.save('PSOanim.gif', writer='imagemagick', fps=12)
             progressbar.progress(75)
 
 
